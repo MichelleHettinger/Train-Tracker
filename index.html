@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+    	<meta charset="UTF-8">
+     	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<!-- Links to reset, bootstrap, font-awesome and my custom css sheets. -->
+		<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+		<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="assets/css/font-awesome.min.css">
+		<link rel="stylesheet" type="text/css" href="assets/css/mystyles.css">
+		
+		<!-- Title displayed on tab. -->
+		<title>Train Tracker</title>
+	</head>
+
+	<body>
+	<div class="container">
+
+		<!-- Section 1 -->
+		<div class="jumbotron">
+			<h1>Anytime is Train Time</h1>
+			<h2>Choo Choo. Chee Chee.</h2>
+		</div>
+
+		<!-- Section 2 -->
+		<div class="panel panel-primary">
+			<div class="panel-heading">
+				<h3 class="panel-title">Current Train Schedule</h3>
+			</div>
+			
+			<div class="panel-body">
+				<table class="table">
+					<thead>
+						<tr>
+							<th>Train Name</th>
+							<th>Destination</th>
+							<th>Frequency (min)</th>
+							<th>Next Arrival</th>
+							<th>Minutes Away</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Example</td>
+							<td>Example</td>
+							<td>Example</td>
+							<td>Example</td>
+							<td>Example</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+		<!-- Section 3 -->
+		<div class="panel panel-primary">
+			<div class="panel-heading">
+				<h3 class="panel-title">Add Train</h3>
+			</div>
+
+			<div class="panel-body">
+				<form>
+					<div class="form-group">
+						<label for="trainName">Train Name</label>
+						<input type="text" class="form-control"></input>
+					</div>
+					<div class="form-group">
+						<label for="trainDestination">Destination</label>
+						<input type="text" class="form-control"></input>
+					</div>
+					<div class="form-group">
+						<label for="firstTrainTime">First Train Time (HH:mm - military time)</label>
+						<input type="text" class="form-control"></input>
+					</div>
+					<div class="form-group">
+						<label for="trainFrequency">Frequency</label>
+						<input type="text" class="form-control"></input>
+					</div>
+					<button type="submit" class="btn btn-primary">Submit</button>						
+				</form>
+			</div>
+		</div>
+
+
+
+
+
+
+	</div>
+
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins)-->
+    <script src="assets/js/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="assets/js/bootstrap.min.js"></script> 
+    <!-- My main js file -->
+    
+	</body>
+
+</html>
