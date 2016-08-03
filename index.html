@@ -99,49 +99,12 @@
     <script src="assets/js/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="assets/js/bootstrap.min.js"></script> 
+    <!-- MomentJS -->
+    <script type="text/javascript"></script>
     <!-- My main js file -->
-    	<script type="text/javascript">
-
-	    var type = 'the+little+mermaid';
-	    var queryURL = "http://www.omdbapi.com/?t=" + type + "&y=&plot=short&r=json";
-
-	    $.ajax({
-	            url: queryURL,
-	            method: 'GET'
-	        })
-	        .done(function(response) {
-	            console.log(response);
-
-		    	var apple = [1,2];
-
-		    	//Display the information to the table
-		    	for(i=0; i<apple.length; i++){
-					var newRow = $("<tr>");
-
-					var newTrainName = $("<td>");
-					var newDestination = $("<td>");
-					var newFrequency = $("<td>");
-					var newArrival = $("<td>");
-					var newMinutes = $("<td>");
-
-					newTrainName.text(apple[i]);
-					newDestination.text(apple[i]);
-					newFrequency.text(apple[i]);
-					newArrival.text(apple[i]);
-					newMinutes.text(apple[i]);
-
-					newRow.append(newTrainName, newDestination, newFrequency, newArrival, newMinutes);
-
-					$("#good").append(newRow);
-				}
+    <script src="assets/js/myapp.js"></script> 
 
 
-
-	        });
-
-
-
-	</script>
 	</body>
 
 </html>
