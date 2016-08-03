@@ -12,9 +12,11 @@ if (trainCount == null){
 	console.log("No train count found");
 }
 
-
+//For the number of trains submitted, grab from local storage and display them on the screen.
 for (i=0;i<trainCount;i++){
+	var fetchedRow = localStorage.getItem("data-train-" + i);
 
+	$("#emptyTBODY").append(fetchedRow);
 }
 
 //When the submit button is pressed, the values in the input fields are stored in new variable
@@ -48,6 +50,5 @@ $('#press-submit').on('click', function() {
 
 	localStorage.setItem("train-count",trainCount);
 
-	return false;
 })
 
