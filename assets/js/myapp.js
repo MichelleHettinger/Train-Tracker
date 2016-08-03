@@ -17,6 +17,12 @@ for (i=0;i<trainCount;i++){
 	var fetchedRow = localStorage.getItem("data-train-" + i);
 
 	$("#emptyTBODY").append(fetchedRow);
+
+	var fetchedRow = $('table').children().eq(1).children('tr');
+	var fetchedFirstTrainTime = fetchedRow.eq(i).children('td').eq(2).text(moment(fetchedFirstTrainTime).format('LT'));
+
+	console.log("first train value: " + fetchedFirstTrainTime);
+
 }
 
 //When the submit button is pressed, the values in the input fields are stored in new variable
