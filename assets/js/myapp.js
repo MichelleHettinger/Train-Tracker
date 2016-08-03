@@ -1,14 +1,27 @@
+//Establish train count variable as zero. Set the train count equal to the one that was previously stored.
+//If it was not previously stored, trainCount will become null.
+//If train count is null, set trainCount to zero.
 
+var trainCount = 0;
 
+trainCount = localStorage.getItem("train-count");
+console.log("Train count loaded: " + trainCount);
 
 if (trainCount == null){
-	var trainCount = 0;
+	trainCount = 0;
+	console.log("No train count found");
+}
+
+
+for (i=0;i<trainCount;i++){
+
 }
 
 //When the submit button is pressed, the values in the input fields are stored in new variable
 //Then a new row is created with unique identifier (data-train) and text containing the input information
 //The new row is stored in local storage and train count increment by 1
 $('#press-submit').on('click', function() {
+
 	var newTrainName = $("#add-train").val().trim();
 	var newDestination = $("#add-destination").val().trim();
 	var newFrequency =  $("#add-first-train").val().trim();
@@ -25,9 +38,15 @@ $('#press-submit').on('click', function() {
 
 	newRow.attr("data-train", trainCount);
 
-	localStorage.setItem(newRow);
+	var stringRow = newRow.prop("outerHTML");
+
+	alert(stringRow);
+
+	localStorage.setItem("data-train-" + trainCount, stringRow);
 
 	trainCount++;
+
+	localStorage.setItem("train-count",trainCount);
 
 	return false;
 })
