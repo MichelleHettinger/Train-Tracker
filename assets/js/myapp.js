@@ -15,40 +15,37 @@ if (trainCount == null){
 //For the number of trains submitted, grab from local storage and display them on the screen.
 for (i=0;i<trainCount;i++){
 	var fetchedRow = localStorage.getItem("data-train-" + i);
+	console.log("first train value: " + fetchedRow);
 
 	$("#emptyTBODY").append(fetchedRow);
-
-	var fetchedRow = $('table').children().eq(1).children('tr');
-	var fetchedFirstTrainTime = fetchedRow.eq(i).children('td').eq(2).text(moment(fetchedFirstTrainTime).format('LT'));
-
-	console.log("first train value: " + fetchedFirstTrainTime);
 
 }
 
 //When the submit button is pressed, the values in the input fields are stored in new variable
-//Then a new row is created with unique identifier (data-train) and text containing the input information
+//Then a new row is created with unique identifier (data-train) and text containing the input information converted by momentjs
 //The new row is stored in local storage and train count increment by 1
 $('#press-submit').on('click', function() {
+	var newTrainTime =  $("#add-first-train").val().trim();
+	newTrainTime = newTrainTime.slice(0,2) + newTrainTime.slice(3,5);
+	var trainTimeMoment = moment(newTrainTime, "HH:mm").format('LT');
 
 	var newTrainName = $("#add-train").val().trim();
 	var newDestination = $("#add-destination").val().trim();
-	var newFrequency =  $("#add-first-train").val().trim();
-	var newArrival =  $("#add-frequency").val().trim();
-	var newMinutes =  $("#press-submit").val().trim();
+	var newFrequency =  $("#add-frequency").val().trim();
+	var newMinutes = 0;
 
 	var newRow = $("<tr>" +
 	"<td>" + newTrainName + "</td>" +
 	"<td>" + newDestination + "</td>" +
 	"<td>" + newFrequency + "</td>" +
-	"<td>" + newArrival + "</td>" +
+	"<td>" + trainTimeMoment + "</td>" +
 	"<td>" + newMinutes + "</td>" +
 	 "</tr>");
 
 	newRow.attr("data-train", trainCount);
 
 	var stringRow = newRow.prop("outerHTML");
-
-	alert(stringRow);
+	console.log(stringRow);
 
 	localStorage.setItem("data-train-" + trainCount, stringRow);
 
